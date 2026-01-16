@@ -1,0 +1,16 @@
+{
+    "name": "acf/praktijkkaart",
+    "title": "Praktijkkaart",
+    "description": "A custom praktijk block that uses ACF fields.",
+    "category": "BestCare",
+    "icon": "pets",
+    "keywords": ["praktijk", "bestcare", "map"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "acf/praktijklogo",
+    "title": "Praktijk Logo",
+    "description": "A custom praktijk_logo block that uses ACF fields.",
+    "category": "BestCare",
+    "icon": "image",
+    "keywords": ["praktijk", "logo", "bestcare", "single"],
+    "acf": {
+        "blockVersion": "3",
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

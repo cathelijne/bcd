@@ -1,0 +1,255 @@
+{
+    "key": "group_695a981d22077",
+    "title": "User Fields",
+    "fields": [
+        {
+            "key": "field_695c69e5fe270",
+            "label": "Praktijk",
+            "name": "collega_praktijk",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "post_type": [
+                "praktijken"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "post_type"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_695c6a4efe271",
+            "label": "Telefoon (privé)",
+            "name": "collega_telefoon_prive",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 1,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695c6a89fe272",
+            "label": "Telefoon Praktijk",
+            "name": "collega_telefoon_praktijk",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695c6a9efe273",
+            "label": "Functie",
+            "name": "collega_functie",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "choices": {
+                "dierenarts": "dierenarts",
+                "dierenarts-eigenaar": "dierenarts-eigenaar",
+                "dierenarts in opleiding": "dierenarts in opleiding",
+                "para-veterinair": "para-veterinair",
+                "assistent": "assistent",
+                "laborant": "laborant",
+                "apotheekbeheerder": "apotheekbeheerder",
+                "praktijkmanager": "praktijkmanager",
+                "receptionist": "receptionist",
+                "telefonist": "telefonist",
+                "huishoudelijke hulp": "huishoudelijke hulp",
+                "administratief medewerker": "administratief medewerker",
+                "financieel medewerker": "financieel medewerker",
+                "p&o manager": "p&o manager",
+                "management": "management",
+                "anders": "anders"
+            },
+            "default_value": [],
+            "return_format": "label",
+            "allow_custom": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_695c6b65fe274",
+            "label": "Diersoortspecialisatie",
+            "name": "collega_diersoortspecialisatie",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "choices": {
+                "honden": "honden",
+                "katten": "katten",
+                "konijnen": "konijnen",
+                "knaagdieren": "knaagdieren",
+                "kleine herkauwers": "kleine herkauwers",
+                "vogels": "vogels",
+                "paarden": "paarden",
+                "anders": "anders"
+            },
+            "default_value": [
+                "anders"
+            ],
+            "return_format": "label",
+            "allow_custom": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_695c6bbcfe275",
+            "label": "Afstudeerjaar",
+            "name": "collega_afstudeerjaar",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 1,
+            "display_format": "Y",
+            "return_format": "Y",
+            "first_day": 1,
+            "default_to_current_date": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_695c6c15fe276",
+            "label": "Wat zeggen anderen over jou?",
+            "name": "collega_wat_zeggen_anderen_over_jou",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 1,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695c6c41fe277",
+            "label": "Speciale Collega's",
+            "name": "collega_speciale_collegas",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 1,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "current_user",
+                "operator": "==",
+                "value": "logged_in"
+            },
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1768215278
+}

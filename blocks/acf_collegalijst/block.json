@@ -1,0 +1,16 @@
+{
+    "name": "acf/collegalijst",
+    "title": "Collegalijst",
+    "description": "A custom colleague block that uses ACF fields.",
+    "category": "BestCare",
+    "icon": "pets",
+    "keywords": ["collega", "bestcare", "archive"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

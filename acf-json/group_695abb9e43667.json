@@ -1,0 +1,256 @@
+{
+    "key": "group_695abb9e43667",
+    "title": "Praktijken",
+    "fields": [
+        {
+            "key": "field_695c63a980d51",
+            "label": "Logo",
+            "name": "praktijk_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_696777ab8ad4f",
+            "label": "Website",
+            "name": "praktijk_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_696777cd8ad50",
+            "label": "Email",
+            "name": "praktijk_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695cd2227a3ed",
+            "label": "Telefoonnummer",
+            "name": "praktijk_telefoonnummer",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Voor een tweede of volgende lokatie van de praktijk: vul dit veld alleen in als het afwijkt van de hoofdlokatie.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "center_lat": 52.2,
+            "center_lng": 5,
+            "zoom": 1,
+            "height": 500,
+            "return_format": "raw",
+            "allow_map_layers": 0,
+            "max_markers": "",
+            "layers": [
+                "OpenStreetMap.Mapnik"
+            ],
+            "key": "field_6964edad4a007",
+            "label": "Coördinaten",
+            "name": "praktijk_coordinaten",
+            "aria-label": "",
+            "type": "open_street_map",
+            "instructions": "Zoek de praktijklocatie op op de kaart. Boven de kaart is een zoekveld, waar je het adres in kan typen.\r\nOnderop kun je per adres de naam van de locatie aangeven. Als je geen naam opgeeft, krijg je de standaardnaam zoals OpenStreetMap die genereert. Die is behoorlijk lelijk, dus beter zelf iets invullen!",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_in_bindings": 0,
+            "leaflet_map": "{\"lat\":52.2008737,\"lng\":4.9987793,\"zoom\":7,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}"
+        },
+        {
+            "key": "field_695c5bd3e227b",
+            "label": "Extra velden",
+            "name": "praktijk_extra",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Als deze praktijk meer dan één lokatie heeft, kun je hier per lokatie eventuele afwijkende telefoonnummers en emailadressen invullen.\r\nLet op: de naam van de lokatie moet hetzelfde zijn als in de kaart hierboven. \r\n\r\nDus als je een praktijk hebt met drie adressen, die je in de kaart hebt gelabeld als \"Kerkstraat\", \"Polderweg\" en \"Dependance achter de Polderweg\", vul dan ook die name in in de velden hieronder.\r\n\r\nJe hoeft alleen het afwijkende gedeelte in te vullen: dus als ze in de Kerkstraat het algemene emailadres gebruiken, maar een afwijkend telefoonnummer, vul dan bij lokatienaam \"Kerkstraat\" in, en bij Telefoonnummer het eigen telefoonnummer van de Kerkstraat.\r\n\r\nLokaties die alles hetzelfde hebben als de algemene informatie hierboven, hoef je hier niet te noemen. Als de drie lokaties uit ons voorbeeld dus allemaal het algemene nummer en de algemene email gebruiken, hoef je hier niks in te vullen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Adres toevoegen",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_695cd88a70338",
+                    "label": "Lokatienaam",
+                    "name": "praktijk_extra_lokatienaam",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_695c5bd3e227b"
+                },
+                {
+                    "key": "field_6967d9af05a6b",
+                    "label": "Telefoonnummer",
+                    "name": "praktijk_extra_telefoonnummer",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_695c5bd3e227b"
+                },
+                {
+                    "key": "field_6967d9ea05a6c",
+                    "label": "Emailadres",
+                    "name": "praktijk_extra_email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_695c5bd3e227b"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "praktijken"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "archive-praktijken"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "display_title": "Praktijkinfo",
+    "modified": 1768505220
+}
