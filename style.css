@@ -11,3 +11,228 @@ Updated: 2026-01-02 16:32:54
 
 */
 
+/* ==========================================================================
+   Praktijk Styles
+   ========================================================================== */
+
+/* Praktijk Logo */
+.praktijk-logo {
+    /* Container for praktijk logo */
+}
+
+.praktijk-logo-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Praktijk Information Display */
+.praktijk-info-single {
+    /* Single location praktijk info container */
+}
+
+.praktijk-info-general {
+    /* General praktijk information for multiple locations */
+}
+
+.praktijk-address {
+    /* Address display */
+}
+
+.praktijk-contact {
+    /* Contact information container */
+}
+
+.praktijk-phone {
+    /* Phone number display */
+}
+
+.praktijk-email {
+    /* Email display */
+}
+
+.praktijk-url {
+    /* Website URL display */
+}
+
+.praktijk-locations {
+    /* Multiple locations container */
+}
+
+.praktijk-location-item {
+    /* Individual location item */
+}
+
+.location-address {
+    /* Location-specific address */
+}
+
+.location-phone {
+    /* Location-specific phone */
+}
+
+.location-email {
+    /* Location-specific email */
+}
+
+/* Praktijk List (Archive) */
+.praktijken-list-container {
+    /* Container for praktijken list */
+}
+
+.praktijken-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.praktijk-list-item {
+    /* Individual praktijk in list */
+}
+
+.praktijk-list-item.praktijk-single-location {
+    /* Praktijk with single location */
+}
+
+.praktijk-list-item.praktijk-multiple-locations {
+    /* Praktijk with multiple locations */
+}
+
+.praktijk-link {
+    /* Link to praktijk page */
+}
+
+.praktijk-name {
+    /* Praktijk name in list */
+}
+
+.praktijk-city {
+    /* City display in list */
+}
+
+.praktijk-location-info {
+    /* Location info for multiple locations */
+}
+
+/* Praktijk Map */
+.praktijk-markers-data {
+    display: none;
+}
+
+#combined-praktijk-map-container {
+    /* Container for combined praktijk map */
+}
+
+/* ==========================================================================
+   Collega (Colleague) Styles
+   ========================================================================== */
+
+/* Collega Information Display */
+.collega-info {
+    /* Main colleague info container */
+}
+
+.collega-contact {
+    /* Contact information section */
+}
+
+.collega-phone {
+    /* Phone number display */
+}
+
+.collega-praktijk {
+    /* Praktijk association section */
+}
+
+.collega-praktijk-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collega-functie {
+    /* Function/role section */
+}
+
+.collega-functie-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collega-specialisaties {
+    /* Specializations section */
+}
+
+.collega-specialisaties-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collega-afstudeerjaar {
+    /* Graduation year section */
+}
+
+.collega-testimonial {
+    /* Testimonial section */
+}
+
+/* Collega List (Archive) */
+.collega-list-container {
+    /* Container for colleague list */
+}
+
+.collega-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collega-list-item {
+    /* Individual colleague in list */
+}
+
+.collega-list-item.collega-single-praktijk {
+    /* Colleague with single praktijk */
+}
+
+.collega-list-item.collega-multiple-praktijken {
+    /* Colleague with multiple praktijken */
+}
+
+.collega-link {
+    /* Link to colleague page */
+}
+
+.collega-name {
+    /* Colleague name in list */
+}
+
+.collega-functie-tag {
+    /* Function tag in list */
+}
+
+.collega-praktijk-info {
+    /* Praktijk info in colleague list */
+}
+
+/* Praktijk Team Display (colleagues on praktijk page) */
+.praktijk-collega-list {
+    /* Team list on praktijk page */
+}
+
+.collega-simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collega-item {
+    /* Individual colleague in team list */
+}
+
+.collega-role {
+    /* Role/function in team list */
+}
+
+

@@ -132,7 +132,7 @@ function _get_marker_address_components($marker) {
     // Verify this is called from allowed functions
     $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
     $caller = $backtrace[1]['function'] ?? '';
-    $allowed_callers = ['_render_leaflet_map', 'render_praktijk_info'];
+    $allowed_callers = ['_render_leaflet_map', 'render_praktijk_info', 'render_combined_praktijk_list'];
     if (!in_array($caller, $allowed_callers)) {
         trigger_error('_get_marker_address_components() is an internal function and should not be called directly', E_USER_WARNING);
         return ['road' => '', 'house_number' => '', 'postcode' => '', 'city' => ''];
@@ -210,7 +210,7 @@ function output_praktijk_markers_data($praktijk_fields, $post_id = null) {
     }
 
     // Output as hidden data element
-    echo '<div class="praktijk-markers-data" style="display:none;" data-markers="' . esc_attr(json_encode($markers)) . '"></div>';
+    echo '<div class="praktijk-markers-data" data-markers="' . esc_attr(json_encode($markers)) . '"></div>';
 }
 
 /**
@@ -228,6 +228,92 @@ function render_combined_praktijk_map_container() {
         <!-- Map will be rendered here by JavaScript -->
     </div>
     <?php
+}
+
+/**
+ * Render a semantically correct list of all praktijken
+ * Displays each praktijk as a list item with link to its page
+ * Distinguishes between praktijken with single vs multiple locations
+ *
+ * @return void
+ */
+function render_combined_praktijk_list() {
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( "Starting function render_combined_praktijk_list() from " . __FILE__ );
+    };
+
+    $query = new WP_Query(array(
+        'post_type' => 'praktijken',
+        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC'
+    ));
+
+    if (!$query->have_posts()) {
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( "No praktijken found for list" );
+        }
+        return;
+    }
+
+    echo '<div class="praktijken-list-container">';
+    echo '<ul class="praktijken-list">';
+
+    while ($query->have_posts()) {
+        $query->the_post();
+        $post_id = get_the_ID();
+        $post_url = get_permalink($post_id);
+        $praktijk_name = get_the_title($post_id);
+        $praktijk_fields = get_fields();
+
+        $markers = $praktijk_fields['praktijk_coordinaten']['markers'] ?? [];
+        $location_count = count($markers);
+        $has_multiple_locations = $location_count > 1;
+
+        // Extract city/cities from markers
+        $cities = [];
+        foreach ($markers as $marker) {
+            $address = _get_marker_address_components($marker);
+            if (!empty($address['city'])) {
+                $cities[] = $address['city'];
+            }
+        }
+        $cities = array_unique($cities); // Remove duplicates
+        $city_display = !empty($cities) ? implode(', ', $cities) : '';
+
+        // Build CSS class for styling
+        $item_class = 'praktijk-list-item';
+        if ($has_multiple_locations) {
+            $item_class .= ' praktijk-multiple-locations';
+        } else {
+            $item_class .= ' praktijk-single-location';
+        }
+
+        echo '<li class="' . esc_attr($item_class) . '" data-location-count="' . esc_attr($location_count) . '">';
+        echo '<a href="' . esc_url($post_url) . '" class="praktijk-link">';
+        echo '<span class="praktijk-name">' . esc_html($praktijk_name) . '</span>';
+
+        // Display location information
+        if ($city_display) {
+            if ($has_multiple_locations) {
+                // Multiple locations: (X lokaties in City1, City2)
+                echo ' <span class="praktijk-location-info" aria-label="' . esc_attr($location_count . ' locaties') . '">';
+                echo '(' . esc_html($location_count) . ' lokaties in ' . esc_html($city_display) . ')';
+                echo '</span>';
+            } else {
+                // Single location: (City)
+                echo ' <span class="praktijk-city">(' . esc_html($city_display) . ')</span>';
+            }
+        }
+
+        echo '</a>';
+        echo '</li>';
+    }
+
+    echo '</ul>';
+    echo '</div>';
+
+    wp_reset_postdata();
 }
 
 /**
@@ -379,4 +465,8 @@ function render_praktijk_info($praktijk_fields) {
  * // Archive pattern - after the query loop:
  * // Place this where you want the combined map
  * render_combined_praktijk_map_container();
+ *
+ * // Archive pattern - list all praktijken:
+ * // Place this where you want the list of praktijken
+ * render_combined_praktijk_list();
  */

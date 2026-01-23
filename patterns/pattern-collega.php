@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: A single praktijk template with a logo and an address block
- * Slug: BestCare/pattern-praktijk
+ * Title: A single colleague (author) template
+ * Slug: BestCare/pattern-collega
  * Inserter: true
  *
  * @package WordPress
@@ -15,36 +15,36 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 ?>
 
 <!-- wp:template-part {"slug":"header","theme":"BestCare"} /-->
-<!-- <?php echo do_shortcode('[bestcare_breadcrumb]'); ?> -->
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
-  <!-- wp:group { "align":"full", "style":{ "spacing":{ "padding":{ "top":"var:preset|spacing|60", "bottom":"var:preset|spacing|60" } } }, "layout":{ "type":"constrained" } } -->
+  <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-    <!-- wp:post-title /-->
+    <?php
+    $author = get_queried_object();
+    if ($author && isset($author->display_name)) {
+      echo '<h1 class="wp-block-post-title">' . esc_html($author->display_name) . '</h1>';
+    }
+    ?>
     <!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
     <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
       <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
         <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
         <div class="wp-block-columns">
-          <!-- wp:column {"width":"20%"} -->
-          <div class="wp-block-column" style="flex-basis:20%">
-            <!-- wp:acf/praktijklogo /-->
+          <!-- wp:column {"width":"33.33%"} -->
+          <div class="wp-block-column" style="flex-basis:33.33%">
+            <!-- wp:avatar {"size":150,"isLink":false,"align":"center"} /-->
           </div>
           <!-- /wp:column -->
 
-          <!-- wp:column {"width":"80%"} -->
-          <div class="wp-block-column" style="flex-basis:80%">
-            <!-- wp:acf/praktijk /-->
-            <!-- wp:acf/praktijkkaart /-->
-            <!-- wp:acf/praktijkteam /-->
+          <!-- wp:column {"width":"66.66%"} -->
+          <div class="wp-block-column" style="flex-basis:66.66%">
+            <!-- wp:acf/collega /-->
           </div>
           <!-- /wp:column -->
         </div>
         <!-- /wp:columns -->
       </div>
       <!-- /wp:group -->
-    <!-- wp:pattern {"slug":"BestCare/post-navigation"} /-->
-    <!-- wp:pattern {"slug":"BestCare/more-posts"} /-->
   </div>
-<!-- /wp:group -->
+  <!-- /wp:group -->
 </main>
 <!-- wp:template-part {"slug":"footer","theme":"BestCare"} /-->

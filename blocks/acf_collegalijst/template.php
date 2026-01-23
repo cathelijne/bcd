@@ -1,34 +1,17 @@
 <?php
+/**
+ * Collega List Block Template.
+ *
+ * @param array  $block The block settings and attributes.
+ * @param string $content The block inner HTML (empty).
+ * @param bool   $is_preview True during backend preview render.
+ * @param int    $post_id The post ID the block is rendering content against.
+ * @param array $context The context provided to the block by the post or its parent block.
+ */
 
-function abGetAllFields($pro_num){
-	$tmpArr = get_field_objects($pro_num);
-	echo '<pre>'; print_r($tmpArr); echo '<pre>';
-	$fillArray = array();
-	foreach( $tmpArr as $tmpFieldObject ) {
-		$fillArray = abGetAllFieldsCycle($fillArray, $tmpFieldObject["name"], $tmpFieldObject["value"]);
-	}
-	return $fillArray;
+if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+    error_log( "Loading" . __FILE__ );
 }
 
-function abGetAllFieldsCycle($fillArray, $name, $value) {
-	if (is_array($value)) {
-		foreach( $value as $key => $value ) {
-			$fillArray = abGetAllFieldsCycle($fillArray, $key, $value);
-		}
-	} else {
-		array_push($fillArray, [$name, $value]);
-	}
-	return $fillArray;
-}
-
-$myFieldArray = abGetAllFields($user_id);
-
-
-// $groups = acf_get_field_groups(array('post_id' => $post_id));
-// if ($groups) {
-//   foreach ($groups as $index => $group) {
-//     $groups[$index]['fields'] = acf_get_fields($group['key']);
-//   }
-// }
-// 
-echo '<pre>'; print_r($myFieldArray); echo '<pre>';
+// Render complete list of colleagues
+render_collega_list();

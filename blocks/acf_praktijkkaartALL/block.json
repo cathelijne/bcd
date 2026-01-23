@@ -1,0 +1,16 @@
+{
+    "name": "acf/praktijkkaartall",
+    "title": "Praktijkkaart ALL",
+    "description": "A custom praktijkkaart block of all praktijken that uses ACF fields.",
+    "category": "BestCare",
+    "icon": "map",
+    "keywords": ["praktijk", "bestcare", "map"],
+    "acf": {
+        "blockVersion": "3",
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

@@ -3,8 +3,8 @@
     "title": "Praktijklijst",
     "description": "A custom praktijklijst block that uses ACF fields.",
     "category": "BestCare",
-    "icon": "map",
-    "keywords": ["praktijk", "bestcare", "map"],
+    "icon": "pet",
+    "keywords": ["praktijk", "bestcare", "list"],
     "acf": {
         "blockVersion": "3",
         "mode": "preview",

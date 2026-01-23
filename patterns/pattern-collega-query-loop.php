@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: The special query loop for the praktijklijst
- * Slug: BestCare/pattern-praktijken-query-loop
+ * Title: The colleague list archive template
+ * Slug: BestCare/pattern-collega-query-loop
  * Inserter: true
  *
  * @package WordPress
@@ -21,8 +21,7 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
     <!-- wp:query-title {"type":"archive","showPrefix":false} /-->
     <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-      <!-- wp:acf/praktijkkaartall /-->
-      <!-- wp:acf/praktijklijst /-->
+      <!-- wp:acf/collegalijst /-->
     </div>
     <!-- /wp:group -->
   </div>

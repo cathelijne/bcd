@@ -1,0 +1,16 @@
+{
+    "name": "acf/praktijkteam",
+    "title": "Praktijk Team",
+    "description": "Displays the team members (colleagues) associated with a praktijk.",
+    "category": "BestCare",
+    "icon": "groups",
+    "keywords": ["praktijk", "team", "colleagues", "collega", "bestcare"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
