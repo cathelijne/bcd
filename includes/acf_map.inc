@@ -9,12 +9,16 @@
  * @access private
  */
 function _render_leaflet_map($map_data, $praktijk_name = '') {
-    // Verify this is called from an allowed function
-    $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
-    $caller = $backtrace[1]['function'] ?? '';
-    if ($caller !== 'render_praktijk_map') {
-        trigger_error('_render_leaflet_map() is an internal function and should not be called directly', E_USER_WARNING);
-        return;
+    // Verify this is called from an allowed function (skip check if debug_backtrace unavailable)
+    if (function_exists('debug_backtrace')) {
+        $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+        $caller = $backtrace[1]['function'] ?? '';
+        if ($caller !== 'render_praktijk_map') {
+            if (function_exists('trigger_error')) {
+                trigger_error('_render_leaflet_map() is an internal function and should not be called directly', E_USER_WARNING);
+            }
+            return;
+        }
     }
 
     if (empty($map_data)) {
@@ -129,13 +133,17 @@ function _render_leaflet_map($map_data, $praktijk_name = '') {
  * @access private
  */
 function _get_marker_address_components($marker) {
-    // Verify this is called from allowed functions
-    $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
-    $caller = $backtrace[1]['function'] ?? '';
-    $allowed_callers = ['_render_leaflet_map', 'render_praktijk_info', 'render_combined_praktijk_list'];
-    if (!in_array($caller, $allowed_callers)) {
-        trigger_error('_get_marker_address_components() is an internal function and should not be called directly', E_USER_WARNING);
-        return ['road' => '', 'house_number' => '', 'postcode' => '', 'city' => ''];
+    // Verify this is called from allowed functions (skip check if debug_backtrace unavailable)
+    if (function_exists('debug_backtrace')) {
+        $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+        $caller = $backtrace[1]['function'] ?? '';
+        $allowed_callers = ['_render_leaflet_map', 'render_praktijk_info', 'render_combined_praktijk_list'];
+        if (!in_array($caller, $allowed_callers)) {
+            if (function_exists('trigger_error')) {
+                trigger_error('_get_marker_address_components() is an internal function and should not be called directly', E_USER_WARNING);
+            }
+            return ['road' => '', 'house_number' => '', 'postcode' => '', 'city' => ''];
+        }
     }
 
     $components = [

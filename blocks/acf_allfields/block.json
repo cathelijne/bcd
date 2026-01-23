@@ -1,0 +1,16 @@
+{
+    "name": "acf/allfields",
+    "title": "All Fields",
+    "description": "A custom block that shows all ACF fields for the post",
+    "category": "BestCare",
+    "icon": "",
+    "keywords": ["all", "bestcare", "single"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

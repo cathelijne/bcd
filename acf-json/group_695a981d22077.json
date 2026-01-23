@@ -233,23 +233,6 @@
                 "param": "current_user",
                 "operator": "==",
                 "value": "logged_in"
-            },
-            {
-                "param": "user_form",
-                "operator": "==",
-                "value": "all"
-            }
-        ],
-        [
-            {
-                "param": "current_user",
-                "operator": "==",
-                "value": "logged_in"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "praktijken"
             }
         ]
     ],
@@ -263,5 +246,5 @@
     "description": "",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1769170212
+    "modified": 1769185116
 }

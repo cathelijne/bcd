@@ -235,4 +235,30 @@ Updated: 2026-01-02 16:32:54
     /* Role/function in team list */
 }
 
+/* ==========================================================================
+   ACF All Fields Block Styles
+   ========================================================================== */
+
+.acf-all-fields {
+    /* Container for ACF fields display */
+}
+
+.acf-fields-list {
+    /* Definition list for ACF fields */
+}
+
+.acf-field-name {
+    /* Field name (dt element) */
+    font-weight: bold;
+}
+
+.acf-field-value {
+    /* Field value (dd element) */
+}
+
+.acf-no-fields {
+    /* Message when no fields are defined */
+    font-style: italic;
+    color: #666;
+}
 

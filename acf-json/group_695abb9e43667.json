@@ -71,23 +71,20 @@
             "label": "Telefoonnummer",
             "name": "praktijk_telefoonnummer",
             "aria-label": "",
-            "type": "number",
+            "type": "phone_number",
             "instructions": "Voor een tweede of volgende lokatie van de praktijk: vul dit veld alleen in als het afwijkt van de hoofdlokatie.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "min": "",
-            "max": "",
+            "default_country": "nl",
+            "placeholder": "+31 20 66 48 244",
+            "return_format": "array",
             "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "country": "us"
         },
         {
             "center_lat": 52.2,
@@ -252,5 +249,5 @@
     "description": "",
     "show_in_rest": 1,
     "display_title": "Praktijkinfo",
-    "modified": 1768505220
+    "modified": 1769206590
 }

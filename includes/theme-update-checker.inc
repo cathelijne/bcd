@@ -24,7 +24,7 @@ if ( strpos( $myName, 'staging' ) !== false ) {
 } elseif ( $myName == 'bestcaredierenartsen.nl' || $myName == 'www.bestcaredierenartsen.nl' ) {
     $myUpdateChecker = PucFactory::buildUpdateChecker(
         'https://github.com/cathelijne/bcd/',
-        get_stylesheet_directory() . '/style.css',
+        '/style.css',
         'BestCare'
     );
     //Set the branch that contains the stable release.
