@@ -16,19 +16,25 @@ if ( strpos( $myName, 'staging' ) !== false ) {
     // Staging - use staging branch
     $myUpdateChecker = PucFactory::buildUpdateChecker(
         'https://github.com/cathelijne/bcd/',
-        'wp-content/themes/BestCare' . '/style.css',
-        'BestCare'
+        get_stylesheet_directory() . '/style.css',
     );
     $myUpdateChecker->setBranch('staging');
 
 } elseif ( $myName == 'bestcaredierenartsen.nl' || $myName == 'www.bestcaredierenartsen.nl' ) {
     $myUpdateChecker = PucFactory::buildUpdateChecker(
         'https://github.com/cathelijne/bcd/',
-        '/style.css',
-        'BestCare'
+        get_stylesheet_directory() . '/style.css',
     );
     //Set the branch that contains the stable release.
     $myUpdateChecker->setBranch('stable');
+
+} elseif ( $myName == 'bcd.ddev.site' ) {
+    $myUpdateChecker = PucFactory::buildUpdateChecker(
+        'https://github.com/cathelijne/bcd/',
+        get_stylesheet_directory() . '/style.css',
+        );
+    //Set the branch that contains the stable release.
+    $myUpdateChecker->setBranch('dev');
 
 
 } else  {
