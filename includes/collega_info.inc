@@ -103,78 +103,122 @@ function render_collega_info($user_id = null) {
 
 /**
  * Render a list of all colleagues
- * Displays each colleague as a list item with link to their page
+ * Displays each colleague as a card with avatar, name, function, and praktijk
  *
- * @param array $args Optional arguments to filter the colleague list
+ * @param array $args Optional arguments to filter and sort the colleague list
  * @return void
  */
 function render_collega_list($args = array()) {
     $defaults = array(
         'role' => '', // Filter by role if needed
-        'orderby' => 'display_name',
+        'orderby' => 'last_name',
         'order' => 'ASC',
         'number' => -1, // All users
+        'show_sort' => true, // Show sorting controls
     );
 
     $args = wp_parse_args($args, $defaults);
 
-    $users = get_users($args);
+    // Get sorting preference from query string
+    $sort_by = isset($_GET['sort_colleagues']) ? sanitize_text_field($_GET['sort_colleagues']) : $args['orderby'];
+
+    // Get users
+    $users = get_users(array(
+        'role' => $args['role'],
+        'number' => $args['number'],
+    ));
 
     if (empty($users)) {
         return;
     }
 
-    echo '<div class="collega-list-container">';
-    echo '<ul class="collega-list">';
-
+    // Enrich users with ACF data for sorting
+    $enriched_users = array();
     foreach ($users as $user) {
         $user_id = $user->ID;
-        $user_url = get_author_posts_url($user_id);
-        $display_name = $user->display_name;
-
-        // Get ACF fields
         $praktijk_ids = get_field('collega_praktijk', 'user_' . $user_id);
         $functies = get_field('collega_functie', 'user_' . $user_id);
 
-        // Build praktijk info
-        $praktijk_names = array();
-        if (!empty($praktijk_ids)) {
-            foreach ($praktijk_ids as $praktijk_id) {
-                $praktijk_names[] = get_the_title($praktijk_id);
-            }
-        }
-
-        // Build CSS classes
-        $item_class = 'collega-list-item';
-        if (!empty($praktijk_ids)) {
-            if (count($praktijk_ids) > 1) {
-                $item_class .= ' collega-multiple-praktijken';
-            } else {
-                $item_class .= ' collega-single-praktijk';
-            }
-        }
-
-        echo '<li class="' . esc_attr($item_class) . '">';
-        echo '<a href="' . esc_url($user_url) . '" class="collega-link">';
-        echo '<span class="collega-name">' . esc_html($display_name) . '</span>';
-
-        // Display primary function if exists
-        if (!empty($functies)) {
-            $primary_functie = is_array($functies) ? $functies[0] : $functies;
-            echo ' <span class="collega-functie-tag">' . esc_html($primary_functie) . '</span>';
-        }
-
-        // Display praktijk info
-        if (!empty($praktijk_names)) {
-            echo ' <span class="collega-praktijk-info">(' . esc_html(implode(', ', $praktijk_names)) . ')</span>';
-        }
-
-        echo '</a>';
-        echo '</li>';
+        $enriched_users[] = array(
+            'user' => $user,
+            'praktijk_ids' => $praktijk_ids,
+            'praktijk_names' => !empty($praktijk_ids) ? array_map('get_the_title', $praktijk_ids) : array(),
+            'functies' => $functies,
+            'first_praktijk' => !empty($praktijk_ids) ? get_the_title($praktijk_ids[0]) : '',
+            'first_functie' => !empty($functies) ? (is_array($functies) ? $functies[0] : $functies) : '',
+            'last_name' => $user->last_name ?: $user->display_name,
+        );
     }
 
-    echo '</ul>';
-    echo '</div>';
+    // Sort enriched users
+    usort($enriched_users, function($a, $b) use ($sort_by) {
+        switch ($sort_by) {
+            case 'praktijk':
+                return strcasecmp($a['first_praktijk'], $b['first_praktijk']);
+            case 'functie':
+                return strcasecmp($a['first_functie'], $b['first_functie']);
+            case 'last_name':
+            default:
+                return strcasecmp($a['last_name'], $b['last_name']);
+        }
+    });
+
+    echo '<div class="collega-list-container">';
+
+    // Sorting controls
+    if ($args['show_sort']) {
+        $current_url = remove_query_arg('sort_colleagues');
+        echo '<div class="collega-sort-controls">';
+        echo '<span class="sort-label">Sorteer op:</span>';
+        echo '<a href="' . esc_url($current_url) . '" class="sort-link' . ($sort_by === 'last_name' ? ' active' : '') . '">Naam</a>';
+        echo '<a href="' . esc_url(add_query_arg('sort_colleagues', 'praktijk', $current_url)) . '" class="sort-link' . ($sort_by === 'praktijk' ? ' active' : '') . '">Praktijk</a>';
+        echo '<a href="' . esc_url(add_query_arg('sort_colleagues', 'functie', $current_url)) . '" class="sort-link' . ($sort_by === 'functie' ? ' active' : '') . '">Functie</a>';
+        echo '</div>';
+    }
+
+    echo '<div class="collega-list">';
+
+    foreach ($enriched_users as $enriched) {
+        $user = $enriched['user'];
+        $user_id = $user->ID;
+        $user_url = get_author_posts_url($user_id);
+        $display_name = $user->display_name;
+        $praktijk_names = $enriched['praktijk_names'];
+        $functies = $enriched['functies'];
+
+        // Get avatar
+        $avatar = get_avatar($user_id, 80, '', $display_name, array('class' => 'collega-avatar'));
+
+        echo '<div class="collega-card">';
+        echo '<a href="' . esc_url($user_url) . '" class="collega-card-link">';
+
+        // Avatar
+        echo '<div class="collega-card-avatar">';
+        echo $avatar;
+        echo '</div>';
+
+        // Content
+        echo '<div class="collega-card-content">';
+        echo '<h3 class="collega-card-name">' . esc_html($display_name) . '</h3>';
+
+        // Function
+        if (!empty($functies)) {
+            $primary_functie = is_array($functies) ? $functies[0] : $functies;
+            echo '<div class="collega-card-functie">' . esc_html($primary_functie) . '</div>';
+        }
+
+        // Praktijk
+        if (!empty($praktijk_names)) {
+            echo '<div class="collega-card-praktijk">' . esc_html(implode(', ', $praktijk_names)) . '</div>';
+        }
+
+        echo '</div>'; // .collega-card-content
+        echo '</a>';
+        echo '</div>'; // .collega-card
+    }
+
+    echo '</div>'; // .collega-list
+    echo '</div>'; // .collega-list-container
 }
 
 /**
