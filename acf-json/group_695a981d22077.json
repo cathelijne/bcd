@@ -40,7 +40,7 @@
             "label": "Telefoon (privé)",
             "name": "collega_telefoon_prive",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -49,13 +49,10 @@
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 1,
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -64,7 +61,7 @@
             "label": "Telefoon Praktijk",
             "name": "collega_telefoon_praktijk",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -73,13 +70,10 @@
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 0,
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -233,6 +227,23 @@
                 "param": "current_user",
                 "operator": "==",
                 "value": "logged_in"
+            },
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/collegalijst"
+            }
+        ],
+        [
+            {
+                "param": "current_user",
+                "operator": "==",
+                "value": "logged_in"
+            },
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/collega"
             }
         ]
     ],
@@ -246,5 +257,5 @@
     "description": "",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1769185116
+    "modified": 1769520231
 }
