@@ -31,7 +31,7 @@ if ( strpos( $myName, 'staging' ) !== false ) {
 } elseif ( $myName == 'bcd.ddev.site' || $myName == 'dev.bestcaredierenartsen.nl' ) {
     $myUpdateChecker = PucFactory::buildUpdateChecker(
         'https://github.com/cathelijne/bcd/',
-        get_stylesheet_directory() . '/style.css',
+        get_stylesheet_directory() . '/VERSION',
         );
     //Set the branch that contains the stable release.
     $myUpdateChecker->setBranch('dev');
