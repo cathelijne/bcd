@@ -245,6 +245,13 @@
                 "operator": "==",
                 "value": "acf\/collega"
             }
+        ],
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
         ]
     ],
     "menu_order": 0,
@@ -257,5 +264,5 @@
     "description": "",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1769520231
+    "modified": 1769605921
 }
