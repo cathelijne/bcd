@@ -91,9 +91,9 @@
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 0,
             "choices": {
                 "dierenarts": "dierenarts",
+                "eigenaar": "eigenaar",
                 "dierenarts-eigenaar": "dierenarts-eigenaar",
                 "dierenarts in opleiding": "dierenarts in opleiding",
                 "para-veterinair": "para-veterinair",
@@ -219,28 +219,6 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_679a1234567ab",
-            "label": "Verberg in collega gids",
-            "name": "user_cg_hide",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Vink aan om deze gebruiker te verbergen in de collega gids en teamlijsten",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "relevanssi_exclude": 1,
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 1,
-            "ui_on_text": "Ja",
-            "ui_off_text": "Nee",
-            "message": ""
         }
     ],
     "location": [
@@ -286,5 +264,5 @@
     "description": "",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1738175400
+    "modified": 1769701214
 }
