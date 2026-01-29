@@ -136,6 +136,13 @@ function render_collega_list($args = array()) {
     $enriched_users = array();
     foreach ($users as $user) {
         $user_id = $user->ID;
+
+        // Skip users who are hidden from collega gids
+        $is_hidden = get_field('user_cg_hide', 'user_' . $user_id);
+        if ($is_hidden) {
+            continue;
+        }
+
         $praktijk_ids = get_field('collega_praktijk', 'user_' . $user_id);
         $functies = get_field('collega_functie', 'user_' . $user_id);
 
@@ -232,6 +239,12 @@ function get_collega_by_praktijk($praktijk_id) {
     $matched_users = array();
 
     foreach ($all_users as $user) {
+        // Skip users who are hidden from collega gids
+        $is_hidden = get_field('user_cg_hide', 'user_' . $user->ID);
+        if ($is_hidden) {
+            continue;
+        }
+
         $user_praktijken = get_field('collega_praktijk', 'user_' . $user->ID);
         if (!empty($user_praktijken) && in_array($praktijk_id, $user_praktijken)) {
             $matched_users[] = $user;
