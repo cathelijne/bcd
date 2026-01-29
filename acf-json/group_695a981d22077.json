@@ -219,6 +219,27 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_679a8f1234567",
+            "label": "Niet in collegagids",
+            "name": "collega_ncg",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Vink aan om deze gebruiker te verbergen in de collegagids",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "Ja",
+            "ui_off_text": "Nee",
+            "message": ""
         }
     ],
     "location": [
