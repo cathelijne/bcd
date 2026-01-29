@@ -16,7 +16,6 @@
         });
 
         if (allMarkers.length === 0) {
-            console.log('No markers found for combined map');
             return;
         }
 
@@ -91,14 +90,24 @@
 
         var autoFit = mapData.markers.length > 1 ? '1' : '0';
 
+        // Properly escape JSON for HTML attribute by encoding quotes and special chars
+        var markersJson = JSON.stringify(mapData.markers)
+            .replace(/&/g, '&amp;')
+            .replace(/'/g, '&#39;')
+            .replace(/"/g, '&quot;');
+        var layersJson = JSON.stringify(mapData.layers)
+            .replace(/&/g, '&amp;')
+            .replace(/'/g, '&#39;')
+            .replace(/"/g, '&quot;');
+
         return '<div class="leaflet-map leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" ' +
             'data-height="400" ' +
             'data-map="leaflet" ' +
             'data-map-lng="' + mapData.center_lng + '" ' +
             'data-map-lat="' + mapData.center_lat + '" ' +
             'data-map-zoom="' + mapData.zoom + '" ' +
-            'data-map-layers=\'' + JSON.stringify(mapData.layers) + '\' ' +
-            'data-map-markers=\'' + JSON.stringify(mapData.markers) + '\' ' +
+            'data-map-layers="' + layersJson + '" ' +
+            'data-map-markers="' + markersJson + '" ' +
             'data-auto-fit-bounds="' + autoFit + '" ' +
             'style="height: 400px; position: relative;">' +
             '<div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"></div>' +
