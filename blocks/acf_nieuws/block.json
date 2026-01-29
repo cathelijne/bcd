@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-nieuws",
+    "title": "Nieuwsbericht Info",
+    "description": "Displays nieuwsbericht information",
+    "category": "theme",
+    "icon": "megaphone",
+    "keywords": ["nieuws", "news", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

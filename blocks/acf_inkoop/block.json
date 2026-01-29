@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-inkoop",
+    "title": "Inkoopovereenkomst Info",
+    "description": "Displays inkoopovereenkomst information",
+    "category": "theme",
+    "icon": "businessman",
+    "keywords": ["inkoop", "agreement", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

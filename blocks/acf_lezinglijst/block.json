@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-lezinglijst",
+    "title": "Lezing List",
+    "description": "Displays a list of lezingen",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["lezing", "list", "lectures"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

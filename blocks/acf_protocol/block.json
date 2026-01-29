@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-protocol",
+    "title": "Protocol Info",
+    "description": "Displays protocol information",
+    "category": "theme",
+    "icon": "media-document",
+    "keywords": ["protocol", "document", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

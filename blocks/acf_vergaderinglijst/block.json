@@ -1,0 +1,16 @@
+{
+    "name": "acf/vergaderinglijst",
+    "title": "Vergadering Lijst",
+    "description": "Displays a list of all meetings.",
+    "category": "BestCare",
+    "icon": "list-view",
+    "keywords": ["vergadering", "lijst", "list", "meetings"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

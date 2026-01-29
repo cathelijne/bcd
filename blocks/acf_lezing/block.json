@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-lezing",
+    "title": "Lezing Info",
+    "description": "Displays lezing information",
+    "category": "theme",
+    "icon": "megaphone",
+    "keywords": ["lezing", "lecture", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

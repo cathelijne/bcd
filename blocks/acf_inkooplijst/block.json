@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-inkooplijst",
+    "title": "Inkoopovereenkomst List",
+    "description": "Displays a list of inkoopovereenkomsten",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["inkoop", "list", "agreements"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

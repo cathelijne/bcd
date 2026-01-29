@@ -1,0 +1,16 @@
+{
+    "name": "acf/vergaderingkalender",
+    "title": "Vergadering Kalender",
+    "description": "Displays a calendar view of all meetings.",
+    "category": "BestCare",
+    "icon": "calendar",
+    "keywords": ["vergadering", "kalender", "calendar", "meetings"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

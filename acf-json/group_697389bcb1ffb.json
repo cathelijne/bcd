@@ -23,12 +23,33 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_697b943007e2a",
+            "label": "Agenda",
+            "name": "vergadering_agenda_inline",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_69738a4a303c0",
             "label": "Agenda",
-            "name": "vergadering_agenda",
+            "name": "vergadering_agenda_file",
             "aria-label": "",
             "type": "file",
-            "instructions": "",
+            "instructions": "Als de agenda beschikbaar is als PDF, upload hem dan hier",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -49,7 +70,7 @@
             "name": "vergadering_notulen",
             "aria-label": "",
             "type": "file",
-            "instructions": "",
+            "instructions": "Upload hier de notulen",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -106,6 +127,54 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "center_lat": 53.55064,
+            "center_lng": 10.00065,
+            "zoom": 12,
+            "height": 400,
+            "return_format": "raw",
+            "allow_map_layers": 1,
+            "max_markers": "",
+            "layers": [
+                "OpenStreetMap.Mapnik"
+            ],
+            "key": "field_697b932b07e29",
+            "label": "Lokatie",
+            "name": "vergadering_lokatie",
+            "aria-label": "",
+            "type": "open_street_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_in_bindings": 0,
+            "leaflet_map": "{\"lat\":53.55064,\"lng\":10.00065,\"zoom\":12,\"layers\":[\"OpenStreetMap.Mapnik\"],\"markers\":[]}"
+        },
+        {
+            "key": "field_697b94d812e54",
+            "label": "Opmerkingen",
+            "name": "vergadering_opmerkingen",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Als er opmerkingen of bijzonderheden zijn, vermeld ze dan hier. Dit veld is voor alles wat niet in de rest van de velden past.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -132,5 +201,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1769180032
+    "modified": 1769706780
 }

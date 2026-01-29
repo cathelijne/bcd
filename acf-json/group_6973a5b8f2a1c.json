@@ -1,0 +1,99 @@
+{
+    "key": "group_6973a5b8f2a1c",
+    "title": "Symposium Fields",
+    "fields": [
+        {
+            "key": "field_symposium_datum",
+            "label": "Datum",
+            "name": "symposium_datum",
+            "type": "date_picker",
+            "required": 1,
+            "display_format": "d\/m\/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_symposium_tijd",
+            "label": "Tijd",
+            "name": "symposium_tijd",
+            "type": "text",
+            "placeholder": "bijv. 09:00 - 17:00"
+        },
+        {
+            "key": "field_symposium_locatie",
+            "label": "Locatie",
+            "name": "symposium_locatie",
+            "type": "text",
+            "required": 1
+        },
+        {
+            "key": "field_symposium_organisator",
+            "label": "Organisator",
+            "name": "symposium_organisator",
+            "type": "text"
+        },
+        {
+            "key": "field_symposium_beschrijving",
+            "label": "Beschrijving",
+            "name": "symposium_beschrijving",
+            "type": "textarea",
+            "rows": 5
+        },
+        {
+            "key": "field_symposium_programma",
+            "label": "Programma",
+            "name": "symposium_programma",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_symposium_inschrijflink",
+            "label": "Inschrijflink",
+            "name": "symposium_inschrijflink",
+            "type": "url",
+            "placeholder": "https:\/\/"
+        },
+        {
+            "key": "field_symposium_documenten",
+            "label": "Documenten",
+            "name": "symposium_documenten",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Document toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_symposium_document_naam",
+                    "label": "Naam",
+                    "name": "naam",
+                    "type": "text",
+                    "parent_repeater": "field_symposium_documenten"
+                },
+                {
+                    "key": "field_symposium_document_bestand",
+                    "label": "Bestand",
+                    "name": "bestand",
+                    "type": "file",
+                    "return_format": "array",
+                    "parent_repeater": "field_symposium_documenten"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "symposium"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}

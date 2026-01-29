@@ -1,0 +1,161 @@
+{
+    "key": "group_6973a1b2c3d4e",
+    "title": "Protocol",
+    "fields": [
+        {
+            "key": "field_6973a1b2c3d4f",
+            "label": "Versie",
+            "name": "protocol_versie",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Versienummer van het protocol (bijv. 1.0, 2.3)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1.0",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "v",
+            "append": ""
+        },
+        {
+            "key": "field_6973a1b2c3d50",
+            "label": "Ingangsdatum",
+            "name": "protocol_datum",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "Datum waarop dit protocol van kracht wordt",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "default_to_current_date": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6973a1b2c3d51",
+            "label": "Type Protocol",
+            "name": "protocol_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "medisch": "Medisch",
+                "veiligheid": "Veiligheid",
+                "administratief": "Administratief",
+                "hygiëne": "Hygiëne",
+                "noodprocedure": "Noodprocedure",
+                "anders": "Anders"
+            },
+            "default_value": "medisch",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6973a1b2c3d52",
+            "label": "Beschrijving",
+            "name": "protocol_beschrijving",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Korte beschrijving van het protocol",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6973a1b2c3d53",
+            "label": "Protocol Document",
+            "name": "protocol_bestand",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Upload het protocol als PDF bestand",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "uploadedTo",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "pdf",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6973a1b2c3d54",
+            "label": "Verantwoordelijke",
+            "name": "protocol_verantwoordelijke",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "Wie is verantwoordelijk voor dit protocol?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "return_format": "array",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "protocol"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1737994800
+}

@@ -6,8 +6,8 @@ Author: Cathelijne Hornstra
 Author URI: https://cathelijne.github.io
 Description: Best Care is based on Twenty Twenty-Five
 Tags: one-column,custom-colors,custom-menu,custom-logo,editor-style,featured-images,full-site-editing,block-patterns,rtl-language-support,sticky-post,threaded-comments,translation-ready,wide-blocks,block-styles,style-variations,accessibility-ready,blog,portfolio,news
-Version: 1.4.1767364374.16
-Updated: 2026-01-29 16:53:19
+Version: 1.4.1767364374.17
+Updated: 2026-01-29 21:04:03
 
 */
 
@@ -343,3 +343,974 @@ Updated: 2026-01-29 16:53:19
     color: #666;
 }
 
+/* ==========================================================================
+   Vergadering (Meeting) Styles
+   ========================================================================== */
+
+/* Vergadering Info Display */
+.vergadering-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vergadering-info > div {
+    border-left: 3px solid #2271b1;
+    padding-left: 1.5rem;
+}
+
+.vergadering-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #2271b1;
+}
+
+.vergadering-info h3 i {
+    width: 1.5em;
+}
+
+.vergadering-datum p,
+.vergadering-beschrijving p,
+.vergadering-opmerkingen p {
+    margin: 0;
+}
+
+/* Vergadering File Links */
+.vergadering-file-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #f0f6fc;
+    border: 1px solid #2271b1;
+    border-radius: 4px;
+    color: #2271b1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.vergadering-file-link:hover {
+    background: #2271b1;
+    color: white;
+}
+
+.vergadering-file-link i {
+    font-size: 1.2em;
+}
+
+/* Vergadering Attendees List */
+.vergadering-aanwezig-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.vergadering-aanwezig-list li {
+    padding: 0.5rem;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+/* Vergadering Calendar */
+.vergadering-calendar {
+    margin: 2rem 0;
+}
+
+.vergadering-calendar h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.vergadering-month {
+    margin-bottom: 2rem;
+}
+
+.vergadering-month h3 {
+    background: #2271b1;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.vergadering-month-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #dcdcde;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.vergadering-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f0f0f1;
+    transition: background-color 0.2s ease;
+}
+
+.vergadering-item:last-child {
+    border-bottom: none;
+}
+
+.vergadering-item:hover {
+    background: #f6f7f7;
+}
+
+.vergadering-item .vergadering-date {
+    font-weight: bold;
+    color: #2271b1;
+    min-width: 60px;
+}
+
+.vergadering-item .vergadering-time {
+    margin-left: auto;
+    color: #646970;
+    font-size: 0.9em;
+}
+
+.vergadering-item a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.vergadering-item a:hover {
+    color: #2271b1;
+}
+
+/* Vergadering List/Table */
+.vergadering-list {
+    margin: 2rem 0;
+}
+
+.vergadering-list h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.vergadering-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dcdcde;
+}
+
+.vergadering-table thead {
+    background: #f6f7f7;
+}
+
+.vergadering-table th {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid #2271b1;
+    font-weight: 600;
+}
+
+.vergadering-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.vergadering-table tbody tr:hover {
+    background: #f6f7f7;
+}
+
+.vergadering-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.vergadering-table .vergadering-datum {
+    white-space: nowrap;
+    color: #646970;
+}
+
+.vergadering-table .vergadering-documenten {
+    white-space: nowrap;
+}
+
+.vergadering-table .vergadering-documenten a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 1rem;
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.vergadering-table .vergadering-documenten a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vergadering-aanwezig-list {
+        grid-template-columns: 1fr;
+    }
+
+    .vergadering-table {
+        font-size: 0.9em;
+    }
+
+    .vergadering-table td,
+    .vergadering-table th {
+        padding: 0.75rem;
+    }
+
+    .vergadering-item {
+        flex-wrap: wrap;
+    }
+
+    .vergadering-item .vergadering-time {
+        margin-left: 0;
+        order: -1;
+        width: 100%;
+    }
+}
+/* ==========================================================================
+   Protocol Styles
+   ========================================================================== */
+
+/* Protocol Info Display */
+.protocol-info {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.protocol-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.protocol-meta-item {
+    padding: 0.75rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp--preset--color--primary, #007cba);
+}
+
+.protocol-meta-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+
+.protocol-beschrijving {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.protocol-beschrijving h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.protocol-download {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.protocol-download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--wp--preset--color--primary, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.protocol-download-button:hover {
+    background: var(--wp--preset--color--primary-hover, #005a87);
+    color: white;
+}
+
+.protocol-download-button .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Protocol List Display */
+.protocol-list {
+    margin: 2rem 0;
+}
+
+.protocol-group {
+    margin-bottom: 3rem;
+}
+
+.protocol-group h2 {
+    color: var(--wp--preset--color--primary, #007cba);
+    border-bottom: 2px solid var(--wp--preset--color--primary, #007cba);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.protocol-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.protocol-table thead {
+    background: #f5f5f5;
+}
+
+.protocol-table th {
+    text-align: left;
+    padding: 1rem;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+.protocol-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.protocol-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.protocol-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.protocol-table a {
+    color: var(--wp--preset--color--primary, #007cba);
+    text-decoration: none;
+}
+
+.protocol-table a:hover {
+    text-decoration: underline;
+}
+
+.protocol-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.protocol-download-link .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .protocol-info {
+        padding: 1rem;
+    }
+
+    .protocol-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .protocol-table {
+        font-size: 0.9em;
+    }
+
+    .protocol-table td,
+    .protocol-table th {
+        padding: 0.75rem;
+    }
+
+    /* Stack table on very small screens */
+    @media (max-width: 480px) {
+        .protocol-table,
+        .protocol-table thead,
+        .protocol-table tbody,
+        .protocol-table th,
+        .protocol-table td,
+        .protocol-table tr {
+            display: block;
+        }
+
+        .protocol-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .protocol-table tr {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .protocol-table td {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+        }
+
+        .protocol-table td:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 1rem;
+            font-weight: 600;
+            color: #666;
+        }
+    }
+}
+
+/* ==========================================================================
+   Symposium Styles
+   ========================================================================== */
+
+.symposium-info,
+.symposium-list {
+    margin: 2rem 0;
+}
+
+.symposium-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.symposium-meta-item {
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp--preset--color--primary, #007cba);
+}
+
+.symposium-meta-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+
+.symposium-beschrijving,
+.symposium-programma {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.symposium-documenten ul {
+    list-style: none;
+    padding: 0;
+}
+
+.symposium-documenten li {
+    padding: 0.5rem 0;
+}
+
+.symposium-inschrijven {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.symposium-inschrijf-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--wp--preset--color--primary, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.symposium-inschrijf-button:hover {
+    background: var(--wp--preset--color--primary-hover, #005a87);
+    color: white;
+}
+
+.symposium-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.symposium-table th {
+    text-align: left;
+    padding: 1rem;
+    background: #f5f5f5;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.symposium-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.symposium-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* ==========================================================================
+   Lezing Styles
+   ========================================================================== */
+
+.lezing-info,
+.lezing-list {
+    margin: 2rem 0;
+}
+
+.lezing-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lezing-meta-item {
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp--preset--color--primary, #007cba);
+}
+
+.lezing-meta-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+
+.lezing-onderwerp,
+.lezing-beschrijving {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.lezing-download {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.lezing-download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--wp--preset--color--primary, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.lezing-download-button .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.lezing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.lezing-table th {
+    text-align: left;
+    padding: 1rem;
+    background: #f5f5f5;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.lezing-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.lezing-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* ==========================================================================
+   Nascholing Styles
+   ========================================================================== */
+
+.nascholing-info,
+.nascholing-list {
+    margin: 2rem 0;
+}
+
+.nascholing-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.nascholing-meta-item {
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp--preset--color--primary, #007cba);
+}
+
+.nascholing-meta-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+
+.nascholing-accreditatie {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+.nascholing-beschrijving {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nascholing-download,
+.nascholing-inschrijven {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.nascholing-download-button,
+.nascholing-inschrijf-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--wp--preset--color--primary, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+.nascholing-group {
+    margin-bottom: 3rem;
+}
+
+.nascholing-group h2 {
+    color: var(--wp--preset--color--primary, #007cba);
+    border-bottom: 2px solid var(--wp--preset--color--primary, #007cba);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nascholing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nascholing-table th {
+    text-align: left;
+    padding: 1rem;
+    background: #f5f5f5;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.nascholing-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.nascholing-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* ==========================================================================
+   Inkoopovereenkomst Styles
+   ========================================================================== */
+
+.inkoop-info,
+.inkoop-list {
+    margin: 2rem 0;
+}
+
+.inkoop-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.inkoop-meta-item {
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp--preset--color--primary, #007cba);
+}
+
+.inkoop-meta-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+
+.inkoop-beschrijving,
+.inkoop-contact {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inkoop-download {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.inkoop-download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--wp--preset--color--primary, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.inkoop-download-button .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.inkoop-group {
+    margin-bottom: 3rem;
+}
+
+.inkoop-group h2 {
+    color: var(--wp--preset--color--primary, #007cba);
+    border-bottom: 2px solid var(--wp--preset--color--primary, #007cba);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.inkoop-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inkoop-table th {
+    text-align: left;
+    padding: 1rem;
+    background: #f5f5f5;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.inkoop-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.inkoop-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* ==========================================================================
+   Nieuws Styles
+   ========================================================================== */
+
+.nieuws-info {
+    margin: 2rem 0;
+}
+
+.nieuws-uitgelicht {
+    border-left: 4px solid #ff9800;
+    padding-left: 1.5rem;
+}
+
+.nieuws-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.nieuws-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nieuws-samenvatting {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.nieuws-inhoud {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.nieuws-bijlagen {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nieuws-bijlagen ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nieuws-bijlagen li {
+    padding: 0.5rem 0;
+}
+
+.nieuws-bijlagen a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nieuws-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.nieuws-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.nieuws-item.nieuws-uitgelicht {
+    border-left: 4px solid #ff9800;
+    background: #fffaf0;
+}
+
+.nieuws-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff9800;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.nieuws-item h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.nieuws-item h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nieuws-item h2 a:hover {
+    color: var(--wp--preset--color--primary, #007cba);
+}
+
+.nieuws-datum {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+.nieuws-excerpt {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.nieuws-lees-meer {
+    color: var(--wp--preset--color--primary, #007cba);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nieuws-lees-meer:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Design for New Post Types
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .symposium-meta,
+    .lezing-meta,
+    .nascholing-meta,
+    .inkoop-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .symposium-table,
+    .lezing-table,
+    .nascholing-table,
+    .inkoop-table {
+        font-size: 0.9em;
+    }
+
+    .symposium-table td,
+    .symposium-table th,
+    .lezing-table td,
+    .lezing-table th,
+    .nascholing-table td,
+    .nascholing-table th,
+    .inkoop-table td,
+    .inkoop-table th {
+        padding: 0.75rem;
+    }
+
+    .nieuws-item {
+        padding: 1.5rem;
+    }
+}

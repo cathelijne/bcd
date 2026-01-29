@@ -52,7 +52,7 @@
     "admin_menu_parent": "",
     "show_in_admin_bar": true,
     "show_in_nav_menus": true,
-    "show_in_rest": true,
+    "show_in_rest": false,
     "rest_base": "",
     "rest_namespace": "wp\/v2",
     "rest_controller_class": "WP_REST_Posts_Controller",
@@ -66,13 +66,13 @@
     "plural_capability_name": "posts",
     "supports": [
         "title",
-        "editor",
-        "thumbnail",
         "custom-fields"
     ],
-    "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "taxonomies": [
+        "category"
+    ],
+    "has_archive": true,
+    "has_archive_slug": "vergaderingen",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
         "with_front": "1",

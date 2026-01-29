@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-symposium",
+    "title": "Symposium Info",
+    "description": "Displays symposium information",
+    "category": "theme",
+    "icon": "calendar-alt",
+    "keywords": ["symposium", "event", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

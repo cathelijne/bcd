@@ -1,0 +1,16 @@
+{
+    "name": "acf/vergadering",
+    "title": "Vergadering",
+    "description": "A custom vergadering block that displays meeting details.",
+    "category": "BestCare",
+    "icon": "calendar-alt",
+    "keywords": ["vergadering", "bestcare", "meeting"],
+    "acf": {
+        "blockVersion": 3,
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

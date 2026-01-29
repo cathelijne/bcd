@@ -1,0 +1,90 @@
+{
+    "key": "group_6973a9f9g0e5h",
+    "title": "Nieuwsbericht Fields",
+    "fields": [
+        {
+            "key": "field_nieuws_datum",
+            "label": "Publicatiedatum",
+            "name": "nieuws_datum",
+            "type": "date_picker",
+            "required": 1,
+            "display_format": "d\/m\/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_nieuws_samenvatting",
+            "label": "Samenvatting",
+            "name": "nieuws_samenvatting",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "Korte samenvatting voor in lijsten"
+        },
+        {
+            "key": "field_nieuws_inhoud",
+            "label": "Inhoud",
+            "name": "nieuws_inhoud",
+            "type": "wysiwyg",
+            "required": 1,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_nieuws_auteur",
+            "label": "Auteur",
+            "name": "nieuws_auteur",
+            "type": "user",
+            "role": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_nieuws_uitgelicht",
+            "label": "Uitgelicht",
+            "name": "nieuws_uitgelicht",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_nieuws_bijlagen",
+            "label": "Bijlagen",
+            "name": "nieuws_bijlagen",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Bijlage toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_nieuws_bijlage_naam",
+                    "label": "Naam",
+                    "name": "naam",
+                    "type": "text",
+                    "parent_repeater": "field_nieuws_bijlagen"
+                },
+                {
+                    "key": "field_nieuws_bijlage_bestand",
+                    "label": "Bestand",
+                    "name": "bestand",
+                    "type": "file",
+                    "return_format": "array",
+                    "parent_repeater": "field_nieuws_bijlagen"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "nieuwsbericht"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}

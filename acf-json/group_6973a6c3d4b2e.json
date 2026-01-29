@@ -1,0 +1,74 @@
+{
+    "key": "group_6973a6c3d4b2e",
+    "title": "Lezing Fields",
+    "fields": [
+        {
+            "key": "field_lezing_datum",
+            "label": "Datum",
+            "name": "lezing_datum",
+            "type": "date_picker",
+            "required": 1,
+            "display_format": "d\/m\/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_lezing_tijd",
+            "label": "Tijd",
+            "name": "lezing_tijd",
+            "type": "text",
+            "placeholder": "bijv. 19:30 - 21:00"
+        },
+        {
+            "key": "field_lezing_spreker",
+            "label": "Spreker",
+            "name": "lezing_spreker",
+            "type": "text",
+            "required": 1
+        },
+        {
+            "key": "field_lezing_locatie",
+            "label": "Locatie",
+            "name": "lezing_locatie",
+            "type": "text"
+        },
+        {
+            "key": "field_lezing_onderwerp",
+            "label": "Onderwerp",
+            "name": "lezing_onderwerp",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_lezing_beschrijving",
+            "label": "Beschrijving",
+            "name": "lezing_beschrijving",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_lezing_presentatie",
+            "label": "Presentatie",
+            "name": "lezing_presentatie",
+            "type": "file",
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lezing"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}

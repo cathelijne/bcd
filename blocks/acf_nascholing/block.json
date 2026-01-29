@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-nascholing",
+    "title": "Nascholing Info",
+    "description": "Displays nascholing information",
+    "category": "theme",
+    "icon": "welcome-learn-more",
+    "keywords": ["nascholing", "training", "info"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

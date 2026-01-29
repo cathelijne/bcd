@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-protocollijst",
+    "title": "Protocol List",
+    "description": "Displays a list of protocols",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["protocol", "list", "table"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

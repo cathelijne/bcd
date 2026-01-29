@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-nieuwslijst",
+    "title": "Nieuwsbericht List",
+    "description": "Displays a list of nieuwsberichten",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["nieuws", "list", "news"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

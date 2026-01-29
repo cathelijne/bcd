@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-symposiumlijst",
+    "title": "Symposium List",
+    "description": "Displays a list of symposia",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["symposium", "list", "calendar"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

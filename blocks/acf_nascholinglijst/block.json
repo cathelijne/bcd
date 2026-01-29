@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-nascholinglijst",
+    "title": "Nascholing List",
+    "description": "Displays a list of nascholingen",
+    "category": "theme",
+    "icon": "list-view",
+    "keywords": ["nascholing", "list", "training"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}
