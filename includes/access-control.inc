@@ -152,9 +152,15 @@ function bestcare_restrict_single_post_access() {
 
     global $post;
 
+    // Don't redirect if we're on the homepage (prevents infinite loops)
+    if (is_front_page() || is_home()) {
+        return;
+    }
+
     // Get post categories
     $post_categories = wp_get_post_categories($post->ID);
 
+    // Allow posts/pages without categories (they're unrestricted)
     if (empty($post_categories)) {
         return;
     }
@@ -171,9 +177,9 @@ function bestcare_restrict_single_post_access() {
         }
     }
 
-    // Redirect to home if no access
+    // Redirect to login page if no access (not homepage to prevent loops)
     if (!$has_allowed_category) {
-        wp_redirect(home_url());
+        wp_redirect(wp_login_url(get_permalink($post->ID)));
         exit;
     }
 }
