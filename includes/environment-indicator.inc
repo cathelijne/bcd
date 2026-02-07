@@ -127,7 +127,7 @@ function environment_indicator_styles() {
             top: 0;
             left: 0;
             right: 0;
-            z-index: 999999;
+            z-index: 99998;
             padding: 8px 15px;
             text-align: center;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
