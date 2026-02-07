@@ -77,3 +77,26 @@ add_action('admin_init', function() {
         update_option('default_category', $bestcare_term->term_id);
     }
 });
+
+/**
+ * Enable categories for pages
+ */
+function bestcare_add_categories_to_pages() {
+    register_taxonomy_for_object_type('category', 'page');
+}
+add_action('init', 'bestcare_add_categories_to_pages');
+
+/**
+ * Add category metabox to pages in classic editor
+ */
+function bestcare_add_page_category_metabox() {
+    add_meta_box(
+        'categorydiv',
+        __('Categories'),
+        'post_categories_meta_box',
+        'page',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'bestcare_add_page_category_metabox');
