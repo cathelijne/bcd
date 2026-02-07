@@ -12,11 +12,11 @@ if ( !defined( 'ABSPATH' ) ) exit;
  */
 function bestcare_get_allowed_categories() {
     if (is_user_logged_in()) {
-        // Logged in users can see bestcare, public, and inkoop
-        $categories = ['bestcare', 'public', 'inkoop'];
+        // Logged in users can see bestcare, public, iedereen, and inkoop
+        $categories = ['bestcare', 'public', 'iedereen', 'inkoop'];
     } else {
-        // Non-logged-in users can only see public
-        $categories = ['public'];
+        // Non-logged-in users can see public and iedereen
+        $categories = ['public', 'iedereen'];
     }
 
     $category_ids = [];
